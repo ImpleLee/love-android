@@ -3,11 +3,12 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 31
     buildToolsVersion '31.0.0'
+    ndkVersion '21.3.6528147'
     defaultConfig {
         applicationId 'org.love2d.android'
         versionCode 30
         versionName '11.4'
-        minSdkVersion 19
+        minSdkVersion 16
         targetSdkVersion 31
     }
     signingConfigs {
