@@ -1,3 +1,6 @@
 [submodule "love/src/jni/love"]
 	path = love/src/jni/love
 	url = https://github.com/love2d/love
+[submodule "love/src/jni/lua-modules/CCloader"]
+	path = love/src/jni/lua-modules/CCloader
+	url = git@github.com:26F-Studio/cold_clear_ai_love2d_wrapper

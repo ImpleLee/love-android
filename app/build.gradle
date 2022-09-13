@@ -11,10 +11,19 @@ android {
         minSdkVersion 16
         targetSdkVersion 31
     }
+    signingConfigs {
+        release {
+            storeFile file('./temp.keystore')
+            keyAlias 'mykey'
+            keyPassword '12345678'
+            storePassword '12345678'
+	}
+    }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     flavorDimensions 'mode', 'recording'
