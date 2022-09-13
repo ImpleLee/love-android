@@ -23,11 +23,11 @@ jobs:
       with:
         name: love-android-debug.apk
         path: app/build/outputs/apk/normalRecord/debug/app-normal-record-debug.apk
-    - name: Artifact (Normal unsigned APK)
+    - name: Artifact (Normal signed APK)
       uses: actions/upload-artifact@v2
       with:
         name: love-android.apk
-        path: app/build/outputs/apk/normalRecord/release/app-normal-record-release-unsigned.apk
+        path: app/build/outputs/apk/normalRecord/release/app-normal-record-release.apk
     - name: Artifact (Normal AAB w/o recording)
       uses: actions/upload-artifact@v2
       with:
