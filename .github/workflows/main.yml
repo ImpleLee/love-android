@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
-        submodules: recursive
-    - name: Setup Java 11
-      uses: actions/setup-java@v2
+        submodules: true
+    - name: Setup Java 17
+      uses: actions/setup-java@v3
       with:
         distribution: adopt-hotspot
-        java-version: 11
+        java-version: 17
         cache: gradle
     - name: Build
       run: bash ./gradlew assembleEmbedNoRecordRelease bundleEmbedNoRecordRelease
@@ -25,7 +25,12 @@ jobs:
         name: love-android-embed.apk
         path: app/build/outputs/apk/embedNoRecord/release/app-embed-noRecord-release.apk
     - name: Artifact (Embed AAB w/o recording)
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: love-android-embed.aab
         path: app/build/outputs/bundle/embedNoRecordRelease/app-embed-noRecord-release.aab
+    - name: Artifact (Debug symbols)
+      uses: actions/upload-artifact@v3
+      with:
+        name: love-android-unstripped-debugsyms
+        path: love/build/intermediates/library_jni
