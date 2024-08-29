@@ -3,3 +3,4 @@ function love.errorhandler(msg)
 end
 
 require 'CCloader'
+
